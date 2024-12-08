@@ -1,0 +1,315 @@
+{
+	"abi":[
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_student",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "_certificateHash",
+					"type": "string"
+				}
+			],
+			"name": "requestVerification",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_certificateContract",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "employer",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "student",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "certificateHash",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "bool",
+					"name": "isValid",
+					"type": "bool"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "issuingUniversity",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "issueDate",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "reason",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "VerificationCompleted",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "employer",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "student",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "certificateHash",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "reason",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "VerificationFailed",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "employer",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "student",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "certificateHash",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "VerificationRequested",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "certificateContract",
+			"outputs": [
+				{
+					"internalType": "contract IEducationCertificate",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "employerRequestCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getEmployerVerificationCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "getVerificationDetails",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "student",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "certificateHash",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "isVerified",
+					"type": "bool"
+				},
+				{
+					"internalType": "bool",
+					"name": "exists",
+					"type": "bool"
+				},
+				{
+					"internalType": "address",
+					"name": "issuingUniversity",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "issueDate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "isUniversityAuthorized",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "verificationRequests",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "student",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "employer",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "certificateHash",
+					"type": "string"
+				},
+				{
+					"internalType": "bool",
+					"name": "isVerified",
+					"type": "bool"
+				},
+				{
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "exists",
+					"type": "bool"
+				},
+				{
+					"internalType": "address",
+					"name": "issuingUniversity",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "issueDate",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

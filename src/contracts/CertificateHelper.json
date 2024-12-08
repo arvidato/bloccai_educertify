@@ -1,0 +1,135 @@
+{
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_certificateContract",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"inputs": [],
+			"name": "certificateContract",
+			"outputs": [
+				{
+					"internalType": "contract IEducationCertificate",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "studentName",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "studentId",
+							"type": "string"
+						},
+						{
+							"components": [
+								{
+									"internalType": "string",
+									"name": "name",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "grade",
+									"type": "string"
+								},
+								{
+									"internalType": "uint256",
+									"name": "completionDate",
+									"type": "uint256"
+								},
+								{
+									"internalType": "string",
+									"name": "credits",
+									"type": "string"
+								}
+							],
+							"internalType": "struct CertificateHelper.Course[]",
+							"name": "courses",
+							"type": "tuple[]"
+						},
+						{
+							"internalType": "string",
+							"name": "gpa",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "additionalInfo",
+							"type": "string"
+						}
+					],
+					"internalType": "struct CertificateHelper.StudentData",
+					"name": "_data",
+					"type": "tuple"
+				}
+			],
+			"name": "createStudentDataJSON",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "studentId",
+					"type": "string"
+				},
+				{
+					"internalType": "string",
+					"name": "course",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "timestamp",
+					"type": "uint256"
+				}
+			],
+			"name": "generateCertificateHash",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "pure",
+			"type": "function"
+		},
+		{
+			"inputs": [{"name": "university", "type": "address"}],
+			"name": "isUniversity",
+			"outputs": [{"name": "", "type": "bool"}],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	],
+	"networks": {
+		// Your network details
+	}
+}
